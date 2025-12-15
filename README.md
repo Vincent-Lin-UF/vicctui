@@ -1,6 +1,6 @@
 # Vicctui
 
-Vicctui or Vi-CC-TUI is a minimal Text User Interface (TUI) for **ComputerCraft/ CC: Tweaked" focused on simplicity, clean structure, and easy installation
+Vicctui or Vi-CC-TUI is a minimal Text User Interface (TUI) for **ComputerCraft/ CC: Tweaked** focused on simplicity, clean structure, and easy installation
 
 ---
 ## Installation
