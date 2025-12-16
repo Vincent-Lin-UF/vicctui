@@ -4,6 +4,7 @@ local FILES = {
     ["tui/ui.lua"] = "pLHpfTpM",
     ["tui/state.lua"] = "Wuwj9wMc",
     ["tui/actions.lua"] = "c9RSa1kU",
+    ["tui/store.lua"] = "hLJ7JgLE",
 }
 
 local function ensureDir(path)
@@ -18,8 +19,13 @@ local function download(id, path)
     return shell.run("pastebin", "get", id, path)
 end
 
-for path in pairs(FILES) do 
+for path in pairs(FILES) do
     ensureDir(path)
+end
+
+-- Create apps directory for downloaded apps
+if not fs.exists("apps") then
+    fs.makeDir("apps")
 end
 
 local filesValid = true
