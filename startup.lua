@@ -8,10 +8,10 @@ local logo = {
 
 local gradient = {
     colors.red,
+    colors.orange,
+    colors.pink,
     colors.magenta,
-    colors.purple,
-    colors.blue,
-    colors.lightBlue,
+    colors.red,
 }
 
 local function centerX(text)
@@ -42,7 +42,7 @@ local function drawLoadingBar(y, progress, width)
     term.setCursorPos(centerX(bar), y)
     term.setTextColor(colors.white)
     term.write("[")
-    term.setTextColor(colors.lightBlue)
+    term.setTextColor(colors.red)
     term.write(string.rep("=", filled))
     term.setTextColor(colors.gray)
     term.write(string.rep("-", width - filled))
@@ -60,7 +60,7 @@ local function spinnerAnimation(y, duration)
         local progress = step / steps
 
         term.setCursorPos(centerX("Loading... " .. spinChar), y)
-        term.setTextColor(colors.magenta)
+        term.setTextColor(colors.orange)
         term.write("Loading... " .. spinChar)
 
         drawLoadingBar(y + 1, progress, barWidth)
@@ -79,7 +79,7 @@ local logoY = math.floor(h / 2) - 4
 
 animateLogo(logoY, 10)
 
-term.setTextColor(colors.lightBlue)
+term.setTextColor(colors.red)
 drawLogo(logoY, 1)
 
 spinnerAnimation(logoY + #logo + 2, 1.5)
