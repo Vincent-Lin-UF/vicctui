@@ -1,6 +1,9 @@
 local FILES = {
-    ["startup.lua"] = "BViPWkce",
-    ["tui/main.lua"] = "jp2N8cGK",
+    ["startup.lua"] = "UUgQfuAt",
+    ["tui/app.lua"] = "84nP8ZYx",
+    ["tui/ui.lua"] = "pLHpfTpM",
+    ["tui/state.lua"] = "Wuwj9wMc",
+    ["tui/actions.lua"] = "c9RSa1kU",
 }
 
 local function ensureDir(path)
