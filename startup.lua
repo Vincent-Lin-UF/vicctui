@@ -1,9 +1,11 @@
 term.clear()
 term.setCursorPos(1,1)
+
 print("Welcome to Vi-CC-TUI")
 print("Loading...")
-term.setCursorPos(2,13)
-sleep(1)
+
+term.setCursorPos(2,4)
 textutils.slowPrint("########")
-sleep(1)
+
+sleep(0.5)
 shell.run("tui/main.lua")
