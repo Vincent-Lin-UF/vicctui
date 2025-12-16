@@ -1,18 +1,38 @@
-local files = {
+local FILES = {
     ["startup.lua"] = "BViPWkce",
     ["tui/main.lua"] = "jp2N8cGK",
 }
 
-for path, _ in pairs(files) do
+local function ensureDir(path)
     local dirs = fs.getDir(path)
+
     if dirs ~= "" and not fs.exists(dirs) then
         fs.makeDir(dirs)
     end
 end
 
-for path, id in pairs(files) do
-    shell.run("pastebin get " .. id .. " " .. path)
+local function download(id, path)
+    return shell.run("pastebin", "get", id, path)
 end
 
-print("Vi-CC-TUI Installed")
-os.reboot()
+for path in pairs(FILES) do 
+    ensureDir(path)
+end
+
+local filesValid = true
+for path, id in pairs(FILES) do
+    local valid = download(id, path)
+
+    if not valid then
+        print(("Failed: %s (id=%s)"):format(path, id))
+        filesValid = false
+    end
+end
+
+if filesValid then
+    print("Vi-CC-TUI Installed")
+    os.sleep(1)
+    os.reboot()
+else
+    print("Insatlled incomplete. Fix errors above and rerun installer")
+end
