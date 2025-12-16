@@ -4,8 +4,8 @@ State.selectedIndex = 1
 State.shouldExit = false
 
 State.menuItems = {
-    { label = "Command", actionKey = "command" },
-    { label = "Programs", actionKey = "programs" },
+    { label = "Terminal", actionKey = "terminal" },
+    { label = "App Store", actionKey = "store" },
     { label = "Uninstall", actionKey = "uninstall" },
     { label = "Exit", actionKey = "exit" },
 }
