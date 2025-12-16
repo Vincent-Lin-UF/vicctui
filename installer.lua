@@ -34,5 +34,5 @@ if filesValid then
     os.sleep(1)
     os.reboot()
 else
-    print("Insatlled incomplete. Fix errors above and rerun installer")
+    print("Installed incomplete. Fix errors above and rerun installer")
 end
