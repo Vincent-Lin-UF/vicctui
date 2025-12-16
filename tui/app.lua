@@ -1,5 +1,7 @@
 os.pullEvent = os.pullEventRaw
 
+package.path = package.path .. ";/?.lua;/?/init.lua"
+
 local UI = require("tui.ui")
 local State = require("tui.state")
 local Actions = require("tui.actions")
